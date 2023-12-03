@@ -25,11 +25,13 @@ class ManipulatedString:
 
 if __name__ == "__main__":
     # Small dataset
-    string = "Hello World!"
+    CAPITLIZE_ME = "Hello World!"
     manipulated_string = ManipulatedString(Capitals())
-    print("Manipulated with Capitals:", manipulated_string.manipulate_string(string))
+    print(
+        "Manipulated with Capitals:", manipulated_string.manipulate_string(CAPITLIZE_ME)
+    )
 
     # For a larger dataset, you might prefer a different strategy
-    string = "Hello World!"
+    REVERSE_ME = "Hello World!"
     manipulated_string = ManipulatedString(Reverse())
-    print("Manipulated with Reverse:", manipulated_string.manipulate_string(string))
+    print("Manipulated with Reverse:", manipulated_string.manipulate_string(REVERSE_ME))
