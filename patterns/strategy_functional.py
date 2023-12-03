@@ -1,3 +1,6 @@
+from typing import Callable
+
+
 def reverse(string: str) -> str:
     return "".join(reversed(string))
 
@@ -6,7 +9,7 @@ def capital_letters(string: str) -> str:
     return string.upper()
 
 
-def string_manipulator(func: callable, string: str) -> str:
+def string_manipulator(func: Callable[[str], str], string: str) -> str:
     return func(string)
 
 

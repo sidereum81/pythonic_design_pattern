@@ -1,8 +1,5 @@
-from typing import List
-
-
 class StringManipulatorStrategy:
-    def mainipulate_string(self, data: List[int]) -> List[int]:
+    def manipulate_string(self, string: str) -> str:
         raise NotImplementedError
 
 
