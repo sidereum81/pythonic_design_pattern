@@ -4,9 +4,11 @@ def reverse(string: str) -> str:
 def capital_letters(string: str) -> str:
     return string.upper()
 
-def strategy(func: callable, string: str) -> str:
+def string_manipulator(func: callable, string: str) -> str:
     return func(string)
 
 if __name__ == "__main__":
-    print(strategy(capital_letters, "Kenneth"))
-    print(strategy(reverse, "Kenneth"))
+    print(string_manipulator(capital_letters, "Hello World!"))
+    print(string_manipulator(reverse, "Hello World!"))
+    
+    
