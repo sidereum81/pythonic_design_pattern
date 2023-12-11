@@ -1,12 +1,13 @@
 from typing import List, Callable, TypeVar, Generic
 
-T = TypeVar('T')
+T = TypeVar("T")
 
-class Pipeline:
+
+class Pipeline(Generic[T]):
     def __init__(self):
-        self.pipes : List = []
+        self.pipes: List = []
 
-    def add_pipe(self, pipe: Callable[[T], T]) -> 'Pipeline[T]':
+    def add_pipe(self, pipe: Callable[[T], T]) -> "Pipeline[T]":
         self.pipes.append(pipe)
         return self
 
@@ -16,15 +17,17 @@ class Pipeline:
 
         return data
 
+
 def capital_letters(string: str) -> str:
     return string.upper()
+
 
 def reverse(string: str) -> str:
     return "".join(reversed(string))
 
 
 if __name__ == "__main__":
-    pipeline = Pipeline()
+    pipeline: Pipeline = Pipeline()
     pipeline.add_pipe(capital_letters).add_pipe(reverse)
     result = pipeline.process("Hello world!")
     print(result)
